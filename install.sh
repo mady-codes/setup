@@ -10,10 +10,12 @@ cd ~ || { echo "Failed to change directory to home"; exit 1; }
 
 chmod +x ~/temp/dotfiles/custom/script/* || { echo "Failed to make scripts executable"; exit 1; }
 
-~/temp/dotfiles/custom/script/AUR-Mirror.sh || { echo "Failed to execute AUR-Mirror.sh"; exit 1; }
-~/temp/dotfiles/custom/script/Hyprland.sh || { echo "Failed to execute Hyprland.sh"; exit 1; }
-~/temp/dotfiles/custom/script/Ess-Apps.sh || { echo "Failed to execute Ess-Apps.sh"; exit 1; }
-~/temp/dotfiles/custom/script/Apps-Conf.sh || { echo "Failed to execute Apps-Conf.sh"; exit 1; }
+~/temp/dotfiles/custom/script/aur_mirror.sh || { echo "Failed to execute aur_mirror.sh"; exit 1; }
+~/temp/dotfiles/custom/script/hyprland_install.sh || { echo "Failed to execute hyprland_install.sh"; exit 1; }
+~/temp/dotfiles/custom/script/copy_config.sh || { echo "Failed to execute copy_config.sh"; exit 1; }
+~/temp/dotfiles/custom/script/essentials.sh || { echo "Failed to execute essentials.sh"; exit 1; }
+~/temp/dotfiles/custom/script/applications.sh || { echo "Failed to execute applications.sh"; exit 1; }
 
+echo "Installation Complete. Changing Shell Now. Restart Once Completed"
 
-echo "Installation Complete. Restart Now."
+chsh -s /bin/zsh || { echo "Failed to change shell to zsh"; exit 1; }
